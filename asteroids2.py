@@ -5,7 +5,7 @@
 
 import pgzrun
 from helpers import *
-import random, math
+import random
 
 WIDTH = 800
 HEIGHT = 600
@@ -48,7 +48,7 @@ def update():
         ship.speed += .2
 
     if_on_edge_wrap(ship, WIDTH, HEIGHT)
-    ship.x += math.cos(math.radians(270 - ship.angle)) * ship.speed
-    ship.y += math.sin(math.radians(270 - ship.angle)) * ship.speed
+    move_it(ship, ship.speed)
+    
         
 pgzrun.go()

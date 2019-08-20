@@ -3,6 +3,8 @@
 
 """Helper functions for games examples"""
 
+import math
+
 
 def if_on_edge_bounce(sprite, width, height):
     if sprite.left <= 0:
@@ -25,3 +27,12 @@ def if_on_edge_wrap(sprite, width, height):
     elif sprite.top >= height:
         sprite.bottom = 0
         
+
+def move_it(sprite, distance):
+    """Move sprite in direction of angle by distance.
+
+    We assuming sprite is drawn with front at top of image.
+    """
+    
+    sprite.x += math.cos(math.radians(270 - sprite.angle)) * distance
+    sprite.y += math.sin(math.radians(270 - sprite.angle)) * distance
