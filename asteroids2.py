@@ -40,15 +40,17 @@ def update():
         rock.x += rock.speed_x
         rock.y += rock.speed_y
         rock.angle += rock.rotate_direction
+        
     if keys.LEFT in KEYS:
-        ship.angle += 1
+        ship.angle += 2
     if keys.RIGHT in KEYS:
-        ship.angle -= 1
+        ship.angle -= 2
     if keys.UP in KEYS:
         ship.speed += .2
-    print(ship.angle)
-    ship.x += math.cos(math.radians(ship.angle - 90)) * ship.speed
-    ship.y += math.sin(math.radians(ship.angle - 90)) * ship.speed
+
+    if_on_edge_wrap(ship, WIDTH, HEIGHT)
+    ship.x += math.cos(math.radians(270 - ship.angle)) * ship.speed
+    ship.y += math.sin(math.radians(270 - ship.angle)) * ship.speed
         
 def on_key_down(key):
     KEYS[key] = True
