@@ -1,3 +1,8 @@
+# Copyright 2019, Eric Clack, eric@bn7.net
+# This program is distributed under the terms of the GNU General Public License
+
+"""Version 0 of classic Pong game - just a ball"""
+
 import pgzrun
 import random
 
