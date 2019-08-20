@@ -10,7 +10,6 @@ import random, math
 WIDTH = 800
 HEIGHT = 600
 NUM_ROCKS = 5
-KEYS = {}
 
 ship = Actor('ship')
 ship.pos = (WIDTH/2, HEIGHT/2)
@@ -41,22 +40,15 @@ def update():
         rock.y += rock.speed_y
         rock.angle += rock.rotate_direction
         
-    if keys.LEFT in KEYS:
+    if keyboard.left:
         ship.angle += 2
-    if keys.RIGHT in KEYS:
+    if keyboard.right:
         ship.angle -= 2
-    if keys.UP in KEYS:
+    if keyboard.up:
         ship.speed += .2
 
     if_on_edge_wrap(ship, WIDTH, HEIGHT)
     ship.x += math.cos(math.radians(270 - ship.angle)) * ship.speed
     ship.y += math.sin(math.radians(270 - ship.angle)) * ship.speed
-        
-def on_key_down(key):
-    KEYS[key] = True
-
-def on_key_up(key):
-    if key in KEYS:
-        del(KEYS[key])
         
 pgzrun.go()
