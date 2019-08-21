@@ -1,7 +1,7 @@
 # Copyright 2019, Eric Clack, eric@bn7.net
 # This program is distributed under the terms of the GNU General Public License
 
-"""Version 1 of classic Asteroids game - many rocks"""
+"""Version 2 of classic Asteroids game - with ship"""
 
 import pgzrun
 from helpers import *
@@ -48,7 +48,7 @@ def update():
         ship.speed += .2
 
     if_on_edge_wrap(ship, WIDTH, HEIGHT)
-    move_it(ship, ship.speed)
+    move_forward(ship, ship.speed)
     
         
 pgzrun.go()
