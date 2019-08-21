@@ -1,7 +1,7 @@
 # Copyright 2019, Eric Clack, eric@bn7.net
 # This program is distributed under the terms of the GNU General Public License
 
-"""Version 2 of classic Pong game, with a bat and ball and bricks.
+"""Version 2 of classic Pong game, with a bat,  ball and bricks.
 """
 
 import pgzrun
@@ -12,7 +12,7 @@ WIDTH = 128 * 6
 HEIGHT = 600
 
 ball = Actor('ball')
-ball.pos = (WIDTH/2, ball.height)
+ball.pos = (WIDTH/2, HEIGHT/2)
 ball.speed_x = random.choice([-2,-1,1,2])
 ball.speed_y = random.choice([1,2])
 
@@ -42,9 +42,7 @@ def update():
     
     i = ball.collidelist(bricks)
     if i != -1:
-        brick = bricks[i]
-        # hide it
-        brick.right = 0
+        del(bricks[i])
         # bounce down
         ball.speed_y = abs(ball.speed_y)
 
