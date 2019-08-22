@@ -2,7 +2,7 @@
 
 Example games in PyGame Zero for Brighton Coder Dojo.
 
-My aim is produce examples that are good enough to inspire kids, but not too good that they are satisfying to play, yet. That's where the kids come in: there is plenty of room for improvement to make them into proper playable games. 
+The aim is produce examples that are good enough to inspire kids, but not too good that they are satisfying to play, yet. That's where the kids come in: there is plenty of room for improvement to make them into proper playable games. 
 
 ## Install
 
@@ -15,6 +15,10 @@ pip3 install -r requirements.txt
 ```
 python3 pong1.py
 ```
+
+## Challenges
+
+Let's improve each of the examples to make them into fully playable, satisfying games: [visit the wiki](../../wiki)
 
 ## More info
 
